@@ -16,3 +16,15 @@ $("#input-form").on("submit", function(event) {
   ws.send(JSON.stringify({ handle: handle, text: text }));
   $("#input-text")[0].value = "";
 });
+
+
+$('.input-avatar').on("submit", function(event) {
+  event.preventDefault();
+
+  var name = $("#input-handle")[0].value;
+
+  //Hide avatars
+  $('#avatars').fadeOut();
+  //Show chatroom
+  $("#chatroom").fadeIn();
+});
