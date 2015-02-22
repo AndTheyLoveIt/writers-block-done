@@ -10,7 +10,7 @@ ws.onmessage = function(message) {
   var data = JSON.parse(message.data);
   $("#chat-text").append("<div class='" + (data.handle === localStorage.getItem("username") ? 'msg-mine' : 'msg-yours') + "'>" +
                               "<div class='msg-header'>" +
-                              "<img class='avatar-img' src='/assets/images/" + data.avatar + ".png' />" +
+                              "<img class='avatar-img img-circle' src='/assets/images/" + data.avatar + ".png' />" +
                               data.handle + "</div>" +
                           "<div class='msg-content'>" + data.text + "</div>" +
                           "</div>");
@@ -60,7 +60,7 @@ $("#msg-form").on("submit", function(event) {
 $('.avatar-wrap').click(function(e) {
     $('.avatar-wrap').removeClass('highlighted');
     $(e.delegateTarget).addClass('highlighted');
-    $('#input-handle').val($(e.target).find('h4').text());
+    $('#input-handle').val($(e.delegateTarget).find('h4').text());
 });
 
 if ($('#prompt-form').length) {

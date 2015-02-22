@@ -1,4 +1,4 @@
-body {
+body, h1, h2, h3, h5, h6 {
     color: #3d4d70;
     font-family: 'Abel', sans-serif;
 }
@@ -146,4 +146,13 @@ body {
 
 .avatar-wrap.highlighted {
     background-color: #f0d678;
+}
+
+#chat-text .avatar-img {
+    height: 50px;
+    margin-right: 5px;
+}
+
+.star:after {
+    content: "\2605";
 }
