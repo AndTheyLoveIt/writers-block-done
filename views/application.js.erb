@@ -34,6 +34,7 @@ $("#input-form").on("submit", function(event) {
     $('#prompt-form').fadeIn();
   } else {
     //Show chatroom
+    $('.jumbotron h1').hide();
     $("#chatroom").fadeIn();
   }
 });
@@ -44,7 +45,9 @@ $("#prompt-form").on("submit", function(event) {
   localStorage.setItem("prompt", prompt);
 
   $('#prompt-form').fadeOut();
+  $('.jumbotron h1').hide();
   $("#chatroom").fadeIn();
+
   $('#chat-url').html('Share this room with this url: <input type="text" value="http://writers-block-done.herokuapp.com/chat?room=' + prompt + '" />');
   $('#current-prompt').html(prompts[prompt]);
 });
