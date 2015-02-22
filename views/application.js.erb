@@ -57,9 +57,10 @@ $("#msg-form").on("submit", function(event) {
   $("#input-text")[0].value = "";
 });
 
-$('.input-avatar').click(function(e) {
-    $('.avatar-img').removeClass('highlighted');
-    $(e.target).prev().addClass('highlighted');
+$('.avatar-wrap').click(function(e) {
+    $('.avatar-wrap').removeClass('highlighted');
+    $(e.delegateTarget).addClass('highlighted');
+    $('#input-handle').val($(e.target).find('h4').text());
 });
 
 if ($('#prompt-form').length) {
