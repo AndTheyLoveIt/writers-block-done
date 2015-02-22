@@ -11,9 +11,10 @@
 <div class="container-fluid">
   <div class="jumbotron">
     <h1>Writer's Block DONE!</h1>
-    <p>Two people stumbled across a magic bean and...</p>
   </div>
+
   <form id="input-form" class="">
+    <h3> Select your avatar</h3>
     <div class="form-group">
       <label class="radio-inline">
         <img class="avatar-img img-circle" src="assets/images/dancer.png" alt=""/>
@@ -39,9 +40,47 @@
     <div class="form-group">
       <input id="input-handle" type="text" class="form-control" placeholder="Enter handle" autofocus />
     </div>
-    <button class="btn btn-primary" type="submit">Send</button>
+    <button class="btn btn-primary" type="submit">Start Chat</button>
   </form>
+
+  <% if not prompt %>
+    <form id="prompt-form" class="">
+      <h3>Create a prompt</h3>
+      <div class="form-group">
+      <label class="radio-inline">
+        <p><%= prompts[0] %></p>
+        <input type="radio" name="optionsRadios" class="input-prompt" value="0">
+      </label>
+      <label class="radio-inline">
+        <p><%= prompts[1] %></p>
+        <input type="radio" name="optionsRadios" class="input-prompt" value="1">
+      </label>
+      <label class="radio-inline">
+        <p><%= prompts[2] %></p>
+        <input type="radio" name="optionsRadios" class="input-prompt" value="2">
+      </label>
+      <label class="radio-inline">
+        <p><%= prompts[3] %></p>
+        <input type="radio" name="optionsRadios" class="input-prompt" value="3">
+      </label>
+      <label class="radio-inline">
+        <p><%= prompts[4] %></p>
+        <input type="radio" name="optionsRadios" class="input-prompt" value="4">
+      </label>
+      </div>
+      <button class="btn btn-primary" type="submit">Select Prompt</button>
+    </form>
+  <% end %>
+
   <div id="chatroom">
+    <div class="page-header">
+      <h1>Chat</h1>
+    </div>
+    <% if not prompt %>
+      <p id="current-prompt"></p>
+    <% else %>
+      <p id="current-prompt"><%= prompts[prompt] %></p>
+    <% end %>
     <div id="chat-text">
     </div>
     <form id="msg-form" class="">
