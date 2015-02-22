@@ -10,8 +10,17 @@ body {
   margin: 0 auto;
 }
 
+#chat-url {
+    text-align: center;
+}
+
+#chat-url input[type=text] {
+    width: 305px;
+}
+
 .jumbotron {
     background-color: #e3e6e6;
+    padding: 30px;
 }
 
 .avatar-img {
@@ -28,8 +37,11 @@ body {
 
 .msg-mine, .msg-yours {
     position: relative;
-    padding-top: 31px;
     margin: 10px;
+}
+
+.msg-mine {
+    padding-top: 31px;
 }
 
 .msg-mine > .msg-content::after, .msg-yours > .msg-content::after {
@@ -73,4 +85,18 @@ body {
     border-top: 11px solid #befaf1;
     position: absolute;
     left: 11px;
+}
+
+#msg-form .form-group {
+    width: 80%;
+}
+
+#msg-form {
+    background-color: #1d9aa3;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 85px;
+    padding-top: 26px;
 }

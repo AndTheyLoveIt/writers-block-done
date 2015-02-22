@@ -11,6 +11,11 @@
 <div class="container-fluid">
   <div class="jumbotron">
     <h1>Writer's Block DONE!</h1>
+    <% if not prompt %>
+        <p id="current-prompt"></p>
+    <% else %>
+        <p id="current-prompt"><%= prompts[prompt] %></p>
+    <% end %>
   </div>
 
   <form id="input-form" class="">
@@ -73,17 +78,10 @@
   <% end %>
 
   <div id="chatroom">
-    <div class="page-header">
-      <h1>Chat</h1>
-    </div>
-    <% if not prompt %>
-      <p id="current-prompt"></p>
-    <% else %>
-      <p id="current-prompt"><%= prompts[prompt] %></p>
-    <% end %>
+    <p id="chat-url"></p>
     <div id="chat-text">
     </div>
-    <form id="msg-form" class="">
+    <form id="msg-form" class="form-inline">
       <div class="form-group">
         <input id="input-text" type="text" class="form-control" placeholder="Enter chat text here!" autofocus />
       </div>

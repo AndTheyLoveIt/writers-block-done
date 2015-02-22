@@ -45,9 +45,8 @@ $("#prompt-form").on("submit", function(event) {
 
   $('#prompt-form').fadeOut();
   $("#chatroom").fadeIn();
-
-  $('#current-prompt').html("Share this room with this url: http://writers-block-done.herokuapp.com/chat?room="+prompt+"<br />"+"Your Prompt: "+prompts[prompt]);
-  
+  $('#chat-url').html('Share this room with this url: <input type="text" value="http://writers-block-done.herokuapp.com/chat?room=' + prompt + '" />');
+  $('#current-prompt').html(prompts[prompt]);
 });
 
 $("#msg-form").on("submit", function(event) {
