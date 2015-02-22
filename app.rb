@@ -2,6 +2,10 @@ require 'sinatra/base'
 
 module ChatDemo
   class App < Sinatra::Base
+    get "/" do
+      erb :"home.html"
+    end
+
     get "/chat" do
 
       prompts = ["The fight has been raging for three days. The teachers on their end, toting rulers, eraser canons and textbook grenades, and the students on the other, with only school-approved items found in their bookbags. Both sides have suffered casualties and people are wondering, what happened three days ago at Winston Waters High that started...", 
