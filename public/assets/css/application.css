@@ -10,10 +10,9 @@ body, h1, h2, h3, h5, h6 {
   margin: 0 auto;
 }
 
-.home { background-image: url("/assets/images/writingblock_landing.jpg"); background-repeat: no-repeat; -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; background-size: cover; cursor: pointer;
+.home { background-image: url("/assets/images/landing2.jpg"); background-repeat: no-repeat; background-size : 100% auto; background-color: #604325;
 }
+
 #chat-url {
     text-align: center;
 }
