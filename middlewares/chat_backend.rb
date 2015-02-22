@@ -54,7 +54,7 @@ module ChatDemo
     private
     def sanitize(message)
       json = JSON.parse(message)
-      json.each {|key, value| json[key] = ERB::Util.html_escape(value) }
+      json.each {|key, value| json[key] = value }
       JSON.generate(json)
     end
   end

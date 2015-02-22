@@ -45,9 +45,8 @@ $("#prompt-form").on("submit", function(event) {
 
   $('#prompt-form').fadeOut();
   $("#chatroom").fadeIn();
-
-  $('#current-prompt').html("Share this room with this url: http://writers-block-done.herokuapp.com/chat?room="+prompt+"<br />"+"Your Prompt: "+prompts[prompt]);
-  
+  $('#chat-url').html('Share this room with this url: <input type="text" value="http://writers-block-done.herokuapp.com/chat?room=' + prompt + '" />');
+  $('#current-prompt').html(prompts[prompt]);
 });
 
 $("#msg-form").on("submit", function(event) {
@@ -58,9 +57,10 @@ $("#msg-form").on("submit", function(event) {
   $("#input-text")[0].value = "";
 });
 
-$('.input-avatar').click(function(e) {
-    $('.avatar-img').removeClass('highlighted');
-    $(e.target).prev().addClass('highlighted');
+$('.avatar-wrap').click(function(e) {
+    $('.avatar-wrap').removeClass('highlighted');
+    $(e.delegateTarget).addClass('highlighted');
+    $('#input-handle').val($(e.target).find('h4').text());
 });
 
 if ($('#prompt-form').length) {
