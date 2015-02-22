@@ -4,34 +4,35 @@
   <title>Ruby WebSockets Chat Demo</title>
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="assets/css/application.css" rel="stylesheet" media="screen">
+  <link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
   <div class="jumbotron">
-    <h1>Writer's Block</h1>
+    <h1>Writer's Block DONE!</h1>
     <p>Two people stumbled across a magic bean and...</p>
   </div>
   <form id="input-form" class="">
     <div class="form-group">
       <label class="radio-inline">
-        <img class="avatar-img" src="assets/images/dancer.png" alt=""/>
+        <img class="avatar-img img-circle" src="assets/images/dancer.png" alt=""/>
         <input type="radio" name="optionsRadios" class="input-avatar" value="dancer">
       </label>
       <label class="radio-inline">
-        <img class="avatar-img" src="assets/images/beyonce.png" alt=""/>
+        <img class="avatar-img img-circle" src="assets/images/beyonce.png" alt=""/>
         <input type="radio" name="optionsRadios" class="input-avatar" value="beyonce">
       </label>
       <label class="radio-inline">
-        <img class="avatar-img" src="assets/images/engineer.png" alt=""/>
+        <img class="avatar-img img-circle" src="assets/images/engineer.png" alt=""/>
         <input type="radio" name="optionsRadios" class="input-avatar" value="engineer">
       </label>
       <label class="radio-inline">
-        <img class="avatar-img" src="assets/images/hipster.png" alt=""/>
+        <img class="avatar-img img-circle" src="assets/images/hipster.png" alt=""/>
         <input type="radio" name="optionsRadios" class="input-avatar" value="hipster">
       </label>
       <label class="radio-inline">
-        <img class="avatar-img" src="assets/images/mr-t.png" alt=""/>
+        <img class="avatar-img img-circle" src="assets/images/mr-t.png" alt=""/>
         <input type="radio" name="optionsRadios" class="input-avatar" value="mr-t">
       </label>
     </div>
@@ -41,9 +42,6 @@
     <button class="btn btn-primary" type="submit">Send</button>
   </form>
   <div id="chatroom">
-    <div class="page-header">
-      <h1>Chat</h1>
-    </div>
     <div id="chat-text">
     </div>
     <form id="msg-form" class="">

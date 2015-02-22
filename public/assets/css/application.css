@@ -1,6 +1,17 @@
+body {
+    color: #3d4d70;
+    font-family: 'Abel', sans-serif;
+}
+
 #chat-text {
   overflow: auto;
-  height: 500px;
+  height: 250px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.jumbotron {
+    background-color: #e3e6e6;
 }
 
 .avatar-img {
@@ -13,4 +24,53 @@
 
 .avatar-img.highlighted {
     background-color: lightskyblue;
+}
+
+.msg-mine, .msg-yours {
+    position: relative;
+    padding-top: 31px;
+    margin: 10px;
+}
+
+.msg-mine > .msg-content::after, .msg-yours > .msg-content::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 11px solid #f0d678;
+    position: absolute;
+    right: 7px;
+    bottom: -10px;
+}
+
+.msg-mine > .msg-header {
+    float: right;
+    position: relative;
+    top: -31px;
+}
+
+.msg-yours > .msg-header {
+    position: relative;
+    top: 18px;
+}
+
+.msg-mine > .msg-content, .msg-yours > .msg-content {
+    background-color: #f0d678;
+    min-height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.msg-yours > .msg-content {
+    background-color: #befaf1;
+    padding-left: 49px;
+    padding-top: 12px;
+}
+
+.msg-yours > .msg-content::after {
+    border-top: 11px solid #befaf1;
+    position: absolute;
+    left: 11px;
 }

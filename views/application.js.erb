@@ -3,12 +3,12 @@ var uri      = scheme + window.document.location.host + "/";
 var ws       = new WebSocket(uri);
 ws.onmessage = function(message) {
   var data = JSON.parse(message.data);
-  $("#chat-text").append("<div class='panel panel-default'>" +
-                            "<div class='panel-heading'>" +
-                                "<img class='avatar-img' src='/assets/images/" + data.avatar + ".png' />" +
-                                data.handle +
-                            "</div>" +
-                            "<div class='panel-body'>" + data.text + "</div></div>");
+  $("#chat-text").append("<div class='" + (data.handle === localStorage.getItem("username") ? 'msg-mine' : 'msg-yours') + "'>" +
+                              "<div class='msg-header'>" +
+                              "<img class='avatar-img' src='/assets/images/" + data.avatar + ".png' />" +
+                              data.handle + "</div>" +
+                          "<div class='msg-content'>" + data.text + "</div>" +
+                          "</div>");
   $("#chat-text").stop().animate({
     scrollTop: $('#chat-text')[0].scrollHeight
   }, 800);
