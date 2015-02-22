@@ -16,21 +16,26 @@ ws.onmessage = function(message) {
 
 $("#input-form").on("submit", function(event) {
   event.preventDefault();
-  var handle = $("#input-handle")[0].value;
-  var text   = $("#input-text")[0].value;
+  var username = $("#input-handle")[0].value;
+
   var avatar = $(".input-avatar:checked").val();
-  ws.send(JSON.stringify({ handle: handle, text: text, avatar: avatar }));
+
+  localStorage.setItem("username", username);
+  localStorage.setItem("avatar", avatar);
+
+  //Hide avatars
+  $("#input-form").fadeOut();
+  //Show chatroom
+  $("#chatroom").fadeIn();
+
+});
+
+$("#msg-form").on("submit", function(event) {
+  event.preventDefault();
+
+  var text = $("#input-text")[0].value;
+  ws.send(JSON.stringify({ handle: localStorage.getItem("username"), text: text, avatar: localStorage.getItem("avatar") }));
   $("#input-text")[0].value = "";
 });
 
-
-$('.input-avatar').on("submit", function(event) {
-  event.preventDefault();
-
-  var name = $("#input-handle")[0].value;
-
-  //Hide avatars
-  $('#avatars').fadeOut();
-  //Show chatroom
-  $("#chatroom").fadeIn();
-});
+$("#chatroom").hide();
