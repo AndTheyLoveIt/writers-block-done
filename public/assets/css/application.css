@@ -7,6 +7,10 @@
     height: 50px;
 }
 
-input[type=radio] {
+.input-avatar {
     display: none;
+}
+
+.avatar-img.highlighted {
+    background-color: lightskyblue;
 }

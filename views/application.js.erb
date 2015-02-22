@@ -38,4 +38,9 @@ $("#msg-form").on("submit", function(event) {
   $("#input-text")[0].value = "";
 });
 
+$('.input-avatar').click(function(e) {
+    $('.avatar-img').removeClass('highlighted');
+    $(e.target).prev().addClass('highlighted');
+});
+
 $("#chatroom").hide();
