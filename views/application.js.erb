@@ -63,6 +63,16 @@ $('.avatar-wrap').click(function(e) {
     $('#input-handle').val($(e.delegateTarget).find('h4').text());
 });
 
+$('#new-prompt').click(function () {
+    var $promptsWrap = $('#prompt-form .radio-inline');
+    var $selected = $('#prompt-form .input-prompt:checked');
+    var $nextWrap = $selected.parent().next().length ? $selected.parent().next() : $promptsWrap.first();
+    $selected.parent().addClass('hidden');
+    $nextWrap.removeClass('hidden');
+    $selected.removeAttr('checked');
+    $nextWrap.find('.input-prompt').prop('checked', true);
+});
+
 if ($('#prompt-form').length) {
   $('#prompt-form').hide();
 }

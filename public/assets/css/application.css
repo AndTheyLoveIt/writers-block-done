@@ -129,9 +129,11 @@ body, h1, h2, h3, h5, h6 {
     margin: 0 auto;
 }
 
-#input-form h3 {
+#input-form h3, #prompt-form h3 {
     font-weight: normal;
     text-decoration: underline;
+    margin-bottom: 20px;
+    margin-left: -20px;
 }
 
 #input-form .btn {
@@ -154,4 +156,34 @@ body, h1, h2, h3, h5, h6 {
 
 .star:after {
     content: "\2605";
+}
+
+.input-prompt {
+    display: none;
+}
+
+#new-prompt {
+    display: block;
+    margin: 0 auto;
+    background-color: #f0d678;
+    border-color: #f0d678;
+    color: #3d4d70;
+    margin-top: 200px;
+}
+
+#prompt-form {
+    position: relative;
+}
+
+#prompt-form p {
+    position: absolute;
+    font-size: 19px;
+    background-color: #dcdcdc;
+    padding: 20px;
+    height: 200px;
+    text-align: justify;
+}
+
+#prompt-form button {
+    float: right;
 }

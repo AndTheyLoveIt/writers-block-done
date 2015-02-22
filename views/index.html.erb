@@ -78,30 +78,31 @@
 
   <% if not prompt %>
       <form id="prompt-form" class="">
-        <h3>Create a prompt</h3>
+        <h3>What's the scenario?</h3>
         <div class="form-group">
           <label class="radio-inline">
             <p><%= prompts[0] %></p>
-            <input type="radio" name="optionsRadios" class="input-prompt" value="0">
+            <input type="radio" name="optionsRadios" class="input-prompt" value="0" checked>
           </label>
-          <label class="radio-inline">
+          <label class="radio-inline hidden">
             <p><%= prompts[1] %></p>
             <input type="radio" name="optionsRadios" class="input-prompt" value="1">
           </label>
-          <label class="radio-inline">
+          <label class="radio-inline hidden">
             <p><%= prompts[2] %></p>
             <input type="radio" name="optionsRadios" class="input-prompt" value="2">
           </label>
-          <label class="radio-inline">
+          <label class="radio-inline hidden">
             <p><%= prompts[3] %></p>
             <input type="radio" name="optionsRadios" class="input-prompt" value="3">
           </label>
-          <label class="radio-inline">
+          <label class="radio-inline hidden">
             <p><%= prompts[4] %></p>
             <input type="radio" name="optionsRadios" class="input-prompt" value="4">
           </label>
         </div>
-        <button class="btn btn-primary" type="submit">Select Prompt</button>
+        <input id="new-prompt" type="button" value="Give me a prompt!" class="btn btn-primary"/>
+        <button class="btn btn-primary" type="submit">Ready...set...ROLE PLAY!</button>
       </form>
   <% end %>
 
