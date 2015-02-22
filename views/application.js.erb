@@ -43,13 +43,11 @@ $("#prompt-form").on("submit", function(event) {
   var prompt = $(".input-prompt:checked").val();
   localStorage.setItem("prompt", prompt);
 
-  console.log("Your Prompt: "+prompts[prompt]);
-
   $('#prompt-form').fadeOut();
   $("#chatroom").fadeIn();
 
   $('#current-prompt').html("Share this room with this url: http://writers-block-done.herokuapp.com/chat?room="+prompt+"<br />"+"Your Prompt: "+prompts[prompt]);
-  console.log($('#current-prompt').html());
+  
 });
 
 $("#msg-form").on("submit", function(event) {
